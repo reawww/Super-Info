@@ -61,7 +61,7 @@ This tool helps you quickly obtain critical system information and monitor vario
 ## Installation
 
 1. **Requirements:**  
-   - Ubuntu 24 or another Debian-based system  
+   - Ubuntu or another Debian-based system  
    - Bash shell  
    - `sudo` privileges (to install missing dependencies)
 
