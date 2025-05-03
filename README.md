@@ -4,7 +4,7 @@
 
 ## Overview
 
-**Super Info** is a comprehensive, command-line utility designed for system administrators working on Ubuntu 24 and Debian-based distributions. Developed entirely in Bash, it provides essential functionality for security monitoring and system checks without relying on an external GUI library. Instead, the tool "draws" its text-based interfaces using ASCII borders and colorized output (if your terminal supports colors) to improve readability.
+**Super Info** is a comprehensive, command-line utility designed for system administrators working on Ubuntu and Debian-based distributions. Developed entirely in Bash, it provides essential functionality for security monitoring and system checks without relying on an external GUI library. Instead, the tool "draws" its text-based interfaces using ASCII borders and colorized output (if your terminal supports colors) to improve readability.
 
 This tool helps you quickly obtain critical system information and monitor various services. Its modular design includes the following features:
 
